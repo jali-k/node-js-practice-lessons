@@ -4,8 +4,8 @@
 
 // That can be done with require global
 
-const names = module.require("./people")
-const sayHi = module.require("./talk")
+const names = require("./people")
+const sayHi = require("./talk")
 
 console.log(names);
 console.log(sayHi);
