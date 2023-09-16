@@ -1,0 +1,19 @@
+{
+  "name": "nodejs_practise",
+  "version": "1.0.0",
+  "description": "Practice my node js",
+  "main": "index.js",
+  "scripts": {
+   "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jali-k/node-js-practice-lessons.git"
+  },
+  "author": "jali-k",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jali-k/node-js-practice-lessons/issues"
+  },
+  "homepage": "https://github.com/jali-k/node-js-practice-lessons#readme"
+}
