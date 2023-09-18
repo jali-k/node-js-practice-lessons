@@ -6,10 +6,12 @@ const router = express.Router();
 const {updateACountry, deleteACountry} = require('../controllers/countries')
 
 
+// Flavour 1
+// router.put("/:id", updateACountry)
+// router.delete("/:id", deleteACountry)
 
-router.put("/:id", updateACountry)
+// Flavour 2
+router.route("/:id").put(updateACountry).delete(deleteACountry)
 
-
-router.delete("/:id", deleteACountry)
 
 module.exports = router;
