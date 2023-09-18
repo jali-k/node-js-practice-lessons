@@ -4,7 +4,10 @@ const app = exspress();
 
 app.use(exspress.static('./public'))
 
-app.use(exspress.urlencoded({extended: false}))
+const {countries} = require('./data');
+
+app.use(exspress.urlencoded({extended: false})) // handle POST requests body. Handle data in the trype "application/x-www-form-urlencoded"
+app.use(exspress.json()); // Handle the data in the type "application/json"
 
 app.get("/", (req, res) => {
     res.status(200).json({success:true})
@@ -20,6 +23,25 @@ app.post("/login", (req, res)=>{
     }else{
        return res.status(401).send("Please enter valid credentials")
     }
+})
+
+
+app.put("/change/:id", (req, res)=>{
+   
+    const {id} = req.params;
+    const {title} = req.body;
+    
+    console.log(id);
+    console.log(req.body);
+    if (id) {
+
+        const selectedCountry = countries.find((country) => country.id == Number(id));
+
+        selectedCountry.title = title
+
+        return res.status(200).send(selectedCountry)
+    }
+    res.status(401).send("No id there");
 })
 
 
